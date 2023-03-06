@@ -5,6 +5,13 @@
         <div class="card">
             <div class="card-header">
                 {{ $post->author }} | || | {{ $post->type->name }}
+                <ul class="d-inline">
+                    @foreach ($post->technologies as $technology)
+                        <li class="d-inline">
+                            {{ $technology->name }}
+                        </li>
+                    @endforeach
+                </ul>
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ $post->title }}</h5>
